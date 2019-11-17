@@ -84,8 +84,13 @@ async function render(){
     users = await getUsers()
     users = await getPosts(users)
     var $container = document.getElementById("main-container")
-   
+    
+
     for(const u of users){
+        u.posts.sort((a,b)=>{
+            return b.title.length - a.title.length 
+        })
+
         let $div = document.createElement("div")
         let $profileContainer = document.createElement("div")
         let $postContainer = document.createElement("div")

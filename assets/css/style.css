@@ -1,8 +1,64 @@
-@media (max-width: 576px) {
-    #main-container > div > div > img{
-        width: 30%;
-        border: 1px solid red;
+p{
+    font-size: 0.85em;
+}
+#main-container > div > div > img{
+    width: 30%;
+    border: 1px solid red;
+}
+#main-container > div > div + div > p{
+    padding: 0;
+    margin: 0.2em;
+}
+#main-container > div > div + div > p:nth-child(2n){
+    color:red
+}
+#main-container > div > div + div{
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+#main-container{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    padding:3em;
+    column-gap: 2em;
+}
+
+@media (max-width: 936px) {
+    #main-container{
+        padding:2em;
     }
+    #main-container > div > div:first-child{
+        display:flex;
+        align-items: center;
+    }
+    #main-container > div > div > img{
+        width: 40%;
+        margin-right: 0.5em;
+    }
+    #main-container > div > div + div > p{
+        overflow: hidden;
+        text-overflow: ellipsis;
+        display: -webkit-box;
+        line-height: 16px;    
+        max-height: 32px;     
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+
+    }
+}
+
+@media (max-width: 745px) {
+    #main-container{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        padding:2em;
+        column-gap: 5em;
+    }
+
+    
+}
+
+@media (max-width: 545px) {
     #main-container > div > div{
         display:flex;
         flex-direction: column;
@@ -10,11 +66,12 @@
         align-items: center;
     }
     #main-container > div > div + div > p{
-        padding: 0;
-        margin: 0;
         text-align: center;
     }
-    #main-container > div > div + div > p:nth-child(2n){
-        color:red
+    #main-container{
+        display: grid;
+        grid-template-columns: 1fr;
+        padding:2em;
+        column-gap: 2em;
     }
 }
